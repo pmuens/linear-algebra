@@ -53,3 +53,35 @@ const Vector = require('./vector')
   const res = vector.normalize()
   console.log(res)
 }
+
+{
+  const vector1 = new Vector([7.887, 4.138])
+  const vector2 = new Vector([-8.802, 6.776])
+
+  const res = vector1.dotProduct(vector2)
+  console.log(res)
+}
+
+{
+  const vector1 = new Vector([-5.955, -4.904, -1.874])
+  const vector2 = new Vector([-4.496, -8.755, 7.103])
+
+  const res = vector1.dotProduct(vector2)
+  console.log(res)
+}
+
+{
+  const vector1 = new Vector([3.183, -7.627])
+  const vector2 = new Vector([-2.668, 5.319])
+
+  const res = vector1.angle(vector2)
+  console.log(res)
+}
+
+{
+  const vector1 = new Vector([7.35, 0.221, 5.188])
+  const vector2 = new Vector([2.751, 8.259, 3.985])
+
+  const res = vector1.angle(vector2, { degrees: true })
+  console.log(res)
+}

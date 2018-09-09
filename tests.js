@@ -71,3 +71,29 @@ const Vector = require('./vector')
   )
   assert(rounded.equals(new Vector([-0.577, 0.577, 0.577])))
 }
+
+// dotProduct
+{
+  const vector1 = new Vector([1, 2, 3])
+  const vector2 = new Vector([2, 3, 4])
+
+  const res = vector1.dotProduct(vector2)
+
+  assert(res === 20)
+}
+
+// angle
+{
+  const vector1 = new Vector([1, 2, -1])
+  const vector2 = new Vector([3, 1, 0])
+
+  const radiance = vector1.angle(vector2)
+  const degrees = vector1.angle(vector2, { degrees: true })
+
+  // round so that testing is reliable
+  const roundedRadiance = +radiance.toFixed(3)
+  const roundedDegrees = +degrees.toFixed(3)
+
+  assert(roundedRadiance === 0.869)
+  assert(roundedDegrees === 49.797)
+}

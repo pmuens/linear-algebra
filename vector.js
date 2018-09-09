@@ -46,6 +46,22 @@ class Vector {
     const magnitude = this.magnitude()
     return this.multiply(1 / magnitude)
   }
+
+  dotProduct(vector) {
+    return this.coordinates
+      .map((coordinate, index) => coordinate * (vector.coordinates[index] || 0))
+      .reduce((accum, coordinate) => accum + coordinate, 0)
+  }
+
+  angle(vector, options) {
+    const radiance = Math.acos(
+      this.dotProduct(vector) / (this.magnitude() * vector.magnitude())
+    )
+    if (options && options.degrees) {
+      return (radiance * 180) / Math.PI
+    }
+    return radiance
+  }
 }
 
 module.exports = Vector
