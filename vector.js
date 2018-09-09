@@ -33,6 +33,19 @@ class Vector {
     const result = this.coordinates.map(coordinate => coordinate * scalar)
     return new Vector(result)
   }
+
+  magnitude() {
+    return Math.sqrt(
+      this.coordinates
+        .map(coordinate => Math.pow(coordinate, 2))
+        .reduce((accum, coordinate) => accum + coordinate, 0)
+    )
+  }
+
+  normalize() {
+    const magnitude = this.magnitude()
+    return this.multiply(1 / magnitude)
+  }
 }
 
 module.exports = Vector

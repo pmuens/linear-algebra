@@ -50,3 +50,24 @@ const Vector = require('./vector')
 
   assert(res.equals(new Vector([3, 6, 9])))
 }
+
+// magnitude
+{
+  const vector = new Vector([1, 1, 1, 2, 3])
+
+  const res = vector.magnitude()
+  assert(res === 4)
+}
+
+// normalize
+{
+  const vector = new Vector([-1, 1, 1])
+
+  const res = vector.normalize()
+
+  // round so that testing is reliable
+  const rounded = new Vector(
+    res.coordinates.map(coordinate => +coordinate.toFixed(3))
+  )
+  assert(rounded.equals(new Vector([-0.577, 0.577, 0.577])))
+}

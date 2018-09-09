@@ -25,3 +25,31 @@ const Vector = require('./vector')
   const res = vector.multiply(scalar)
   console.log(res)
 }
+
+{
+  const vector = new Vector([-0.221, 7.437])
+
+  const res = vector.magnitude()
+  console.log(res)
+}
+
+{
+  const vector = new Vector([8.813, -1.331, -6.247])
+
+  const res = vector.magnitude()
+  console.log(res)
+}
+
+{
+  const vector = new Vector([5.581, -2.136])
+
+  const res = vector.normalize()
+  console.log(res)
+}
+
+{
+  const vector = new Vector([1.996, 3.108, -4.554])
+
+  const res = vector.normalize()
+  console.log(res)
+}
